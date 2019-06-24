@@ -2,12 +2,13 @@
   Project 1
   Edward Diaz Lopez
 */
+
 #include <stdio.h>
 #include <string.h>
 #include "airport.h"
 #include <math.h>
 
-
+/*Case 1: Function that will locate a single airport and return code, name, latitude and longitude*/
 void printAirport (Airport airport)
 {
   printf("%-10s", airport.code);
@@ -18,6 +19,7 @@ void printAirport (Airport airport)
   return;
 }
 
+/*Case 2: Function that will return to airport-program.c to print all airports*/
 void printAirports(Airport airports[MAX], int length)
 {
   int i;
@@ -28,6 +30,7 @@ void printAirports(Airport airports[MAX], int length)
   return;
 }
 
+/*Function with all the airports that is included in the program and returns the number of airports*/
 int fillAirports(Airport fill[MAX])
 {
   strcpy(fill[0].code, "SAT");
@@ -121,6 +124,7 @@ Airport findAirport( Airport airports[ MAX ], int length, char code[4])
  return airports[14];
 }
 
+/*Case 3: Function that calculates the distance between 2 airports and returns distance*/
 double calculateDistance( Airport airport1, Airport airport2 )
 {
   double distance;
@@ -130,7 +134,7 @@ double calculateDistance( Airport airport1, Airport airport2 )
   double c;
 
   
-
+/*Formula to calculate distance using longitude and latitude of 2 airports*/
   dlon = (airport2.longitude * PI / 180) - (airport1.longitude * PI / 180);
   dlat = (airport2.latitude * PI / 180) - (airport1.latitude * PI / 180);
   a = pow(sin(dlat/2),2) + cos(airport1.latitude * PI / 180) * cos(airport2.latitude * PI / 180) * pow(sin(dlon/2),2);
@@ -140,6 +144,7 @@ double calculateDistance( Airport airport1, Airport airport2 )
   return distance;
 }
 
+/*Case 4: Function that takes a range and locates airports within range from the origin airport*/
 void findInRange( Airport airports[ MAX ], int length, Airport origin, int range, Airport output[ MAX ], int* resultsLength )
 {
   int distance;
