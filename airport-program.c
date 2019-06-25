@@ -134,7 +134,12 @@ int main( int argc, char *argv[] )
                    /* 1. Ask the user to enter a 3-letter airport code,*/
                     printf("Enter airport code: ");
                     scanf("%s", userCode); 
-
+            
+                    if (airports.longitude == -99999 || airports.latitude == -99999)
+                    {
+                      printf("Error: Airport not found\n");
+                      break;
+                    }
                     /*2. Ask the user to enter a range in miles (integer)*/
                     printf("Enter range in miles:");
                     scanf("%d", &range);
