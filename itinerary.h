@@ -1,4 +1,4 @@
-#ifndef ITINERARY_H 
+#ifndef ITINERARY_H
 #define ITINERARY_H
 
 /* Your Destination struct declaration will go here */
@@ -9,7 +9,6 @@ typedef struct Destination
   struct Destination *next;
 
 } Destination;
-
 
 /* Prototypes have been provided to you. No further comments or code is needed here. */
 Destination *create( char * );
