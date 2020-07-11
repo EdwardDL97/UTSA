@@ -23,7 +23,7 @@ printf("%lf\n", x);
 
 cel = CalculateCelsius(x);
 printf("%lf\n", cel);
- 
+
 kel = CalculateKelvin(cel);
 printf("%lf", kel);
 return 0;
